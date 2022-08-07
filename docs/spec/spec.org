@@ -1,0 +1,53 @@
+#+title: Specification
+#+subtitle: LC3 Microprocessor
+#+options: toc:nil
+#+LATEX_HEADER: \usepackage{parskip}
+#+LATEX_HEADER:\usepackage{enumitem}
+#+LATEX_HEADER:\setitemize{noitemsep}
+
+This document describes the behavior of Patt and Patel's LC3
+microprocessor.
+
+* Datapath
+The datapath we implement has the following control signals:
+| Signal Name | Width |
+|-------------+-------|
+| LD.MAR      |     1 |
+| LD.MDR      |     1 |
+| LD.IR       |     1 |
+| LD.BEN      |     1 |
+| LD.REG      |     1 |
+| LD.CC       |     1 |
+| LD.PC       |     1 |
+| LD.Priv     |     1 |
+| LD.Priority |     1 |
+| LD.SavedSSP |     1 |
+| LD.SavedUSP |     1 |
+| LD.ACV      |     1 |
+| LD.Vector   |     1 |
+|-------------+-------|
+| GatePC      |     1 |
+| GateMDR     |     1 |
+| GateALU     |     1 |
+| GateMARMUX  |     1 |
+| GateVector  |     1 |
+| GatePC-1    |     1 |
+| GatePSR     |     1 |
+| GateSP      |     1 |
+|-------------+-------|
+| PCMUX       |     2 |
+| DRMUX       |     2 |
+| SR1MUX      |     2 |
+| ADDR1MUX    |     1 |
+| ADDR2MUX    |     2 |
+| SPMUX       |     2 |
+| MARMUX      |     1 |
+| TableMUX    |     1 |
+| VectorMUX   |     2 |
+| PSRMUX      |     1 |
+| ALUK        |     2 |
+
+These signals are controlled via the LC3 FSM.
+
+#+caption: LC3 Datapath
+[[./datapath.png]]
