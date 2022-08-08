@@ -29,7 +29,7 @@ module lc3_addr_sel
   always @(*)
     begin
       case (addr2_mux)
-        2'b00:   addr2_mux_out = 4'h0;
+        2'b00:   addr2_mux_out = {16{1'b0}};
         2'b01:   addr2_mux_out = {{10{ir[5]}}, ir[5:0]};
         2'b10:   addr2_mux_out = {{7{ir[5]}}, ir[8:0]};
         2'b11:   addr2_mux_out = {{5{ir[5]}}, ir[10:0]};
