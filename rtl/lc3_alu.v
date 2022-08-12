@@ -1,3 +1,4 @@
+// flop out?
 module lc3_alu
   (alu_k,
    op_a,

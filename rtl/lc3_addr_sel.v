@@ -3,7 +3,7 @@ module lc3_addr_sel
    addr2_mux,
    ir,
    pc,
-   sr1_out,
+   sr1out,
    addr_out
    );
 
@@ -11,7 +11,7 @@ module lc3_addr_sel
   input  [1:0]  addr2_mux;
   input  [15:0] ir;
   input  [15:0] pc;
-  input  [15:0] sr1_out;
+  input  [15:0] sr1out;
   output [15:0] addr_out;
 
   reg    [15:0] addr1_mux_out;
@@ -21,7 +21,7 @@ module lc3_addr_sel
     begin
       case (addr1_mux)
         1'b0:    addr1_mux_out = pc;
-        1'b1:    addr1_mux_out = sr1_out;
+        1'b1:    addr1_mux_out = sr1out;
         default: addr1_mux_out = pc;
       endcase
     end
