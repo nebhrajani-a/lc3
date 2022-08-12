@@ -1,4 +1,4 @@
-module lc3_pc_sel
+module lc3_pc
   (clk,
    rst,
    pcmux,

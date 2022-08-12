@@ -41,9 +41,9 @@ module lc3_regfile
             2'b01:   registers[3'b111] <= data_bus;
             2'b10:   registers[3'b110] <= data_bus;
             default: registers[ir[11:9]] <= data_bus;
-          endcase
+          endcase // case (drmux)
         end
-    end
+    end // always @ (posedge clk or negedge rst)
 
   always @(*)
     begin
@@ -52,7 +52,7 @@ module lc3_regfile
         2'b01:   sr1out = registers[ir[8:6]];
         2'b10:   sr1out = registers[3'b110];
         default: sr1out = registers[ir[11:9]];
-      endcase
+      endcase // case (sr1mux)
     end
 
   assign sr2out = registers[ir[2:0]];
