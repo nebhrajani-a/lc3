@@ -5,7 +5,7 @@ module lc3_nzp
    ld_ben,
    data_bus,
    ir,
-   ben,
+   ben
    );
 
   input        clk;

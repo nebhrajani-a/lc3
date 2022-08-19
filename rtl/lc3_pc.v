@@ -5,7 +5,8 @@ module lc3_pc
    ld_pc,
    addr_out,
    data_bus,
-   pc
+   gate_pc,
+   pc_out
    );
 
   input         clk;
@@ -14,7 +15,8 @@ module lc3_pc
   input         ld_pc;
   input  [15:0] addr_out;
   input  [15:0] data_bus;
-  output [15:0] pc;
+  input         gate_pc;
+  output [15:0] pc_out;
 
   reg    [15:0] pc;
 
@@ -34,5 +36,7 @@ module lc3_pc
           endcase
         end // else: !if(rst == 1'b1)
     end // always @ (posedge clk or negedge rst)
+
+  assign pc_out = (gate_pc == 1'b1) ? pc : {16{1'bx}};
 
 endmodule

@@ -1,1 +1,6 @@
 * lc3
+
+# script to:
+# # auto-add comment headers
+# # microcode generator
+#
