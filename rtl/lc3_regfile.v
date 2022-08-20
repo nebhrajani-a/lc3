@@ -20,7 +20,7 @@ module lc3_regfile
   output [15:0] sr1out;
   output [15:0] sr2out;
 
-  reg    [15:0] registers [7:0];
+  reg    [15:0] registers [0:7];
   reg    [15:0] sr1out;
 
   integer       i;
@@ -29,7 +29,7 @@ module lc3_regfile
     begin
       if (rst == 1'b0)
         begin
-          for (i = 0; i < 7; i = i + 1)
+          for (i = 0; i < 8; i = i + 1)
             begin
               registers[i] <= {16{1'b0}};
             end

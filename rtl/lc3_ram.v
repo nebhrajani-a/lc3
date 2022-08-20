@@ -22,6 +22,12 @@ module lc3_ram
 
   reg [DATA_WIDTH - 1 : 0]        data_out;
   reg [DATA_WIDTH - 1 : 0]        ram [0 : DEPTH - 1];
+  reg                             ready;
+
+  initial
+    begin
+      $readmemb("prog.bin", ram, 'h3000);
+    end
 
   always @(posedge clk)
     begin
@@ -32,6 +38,11 @@ module lc3_ram
               ram[addr] <= data_in;
             end
           data_out <= ram[addr];
+          ready <= 1'b1;
+        end
+      else
+        begin
+          ready <= 1'b0;
         end
     end
 

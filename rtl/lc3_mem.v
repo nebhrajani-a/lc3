@@ -7,8 +7,7 @@ module lc3_mem
    r_w,
    gate_mdr,
    data_bus,
-   ready,
-   mem_out
+   ready
    );
 
   input         clk;
@@ -18,9 +17,8 @@ module lc3_mem
   input         mio_en;
   input         r_w;
   input         gate_mdr;
-  input [15:0]  data_bus;
+  inout [15:0]  data_bus;
   output        ready;
-  output [15:0] mem_out;
 
   reg [15:0]    mar;
   reg [15:0]    mdr;
@@ -56,6 +54,6 @@ module lc3_mem
      .data_out(ram_out)
      );
 
-  assign mem_out = (gate_mdr == 1'b1) ? mdr : {16{1'bx}};
+  assign data_bus = (gate_mdr == 1'b1) ? mdr : {16{1'bz}};
 
 endmodule

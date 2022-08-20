@@ -4,9 +4,8 @@ module lc3_pc
    pcmux,
    ld_pc,
    addr_out,
-   data_bus,
    gate_pc,
-   pc_out
+   data_bus
    );
 
   input         clk;
@@ -14,17 +13,16 @@ module lc3_pc
   input  [1:0]  pcmux;
   input         ld_pc;
   input  [15:0] addr_out;
-  input  [15:0] data_bus;
   input         gate_pc;
-  output [15:0] pc_out;
+  inout  [15:0] data_bus;
 
   reg    [15:0] pc;
 
   always @(posedge clk or negedge rst)
     begin
-      if (rst == 1'b1)
+      if (rst == 1'b0)
         begin
-          pc <= {16{1'b0}};
+          pc <= 16'h3000; // starting program position (without OS)
         end
       else if (ld_pc)
         begin
@@ -34,9 +32,9 @@ module lc3_pc
             2'b10:   pc <= addr_out;
             default: pc <= pc + 1'b1;
           endcase
-        end // else: !if(rst == 1'b1)
+        end
     end // always @ (posedge clk or negedge rst)
 
-  assign pc_out = (gate_pc == 1'b1) ? pc : {16{1'bx}};
+  assign data_bus = (gate_pc == 1'b1) ? pc : {16{1'bz}};
 
 endmodule
