@@ -11,11 +11,8 @@ class Microcode:
         ]
         self.signals = dict.fromkeys(self.signal_list, 0)
         self.widths = dict.fromkeys(self.signal_list, 1)
-        for signal in self.widths:
-            if "mux" in signal:
-                if signal not in ("marmux", "addr1mux", "gate_marmux"):
-                    self.widths[signal] = 2
-        self.widths["aluk"] = 2
+        for signal in ("pcmux", "addr2mux", "drmux", "sr1mux", "aluk"):
+            self.widths[signal] = 2
         self.widths["j"] = 6
         self.widths["cond"] = 3
 
