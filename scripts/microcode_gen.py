@@ -2,7 +2,7 @@ from control_signals_actual import CONTROL_SIGNALS_ACTUAL
 
 
 class Microcode:
-    def __init__(self, sig_in: dict[int, dict[str, int]]):
+    def __init__(self, sig_in: dict[int, dict[str, int]]) -> None:
         self.signal_list = [
             "j", "cond", "ird", "ld_ben", "ld_mar", "ld_mdr", "ld_ir", "ld_pc",
             "ld_reg", "ld_cc", "gate_marmux", "gate_mdr", "gate_alu",
@@ -20,7 +20,7 @@ class Microcode:
         for state in sig_in:
             self.data[state] |= sig_in[state]
 
-    def write_readmemb_file(self, filename: str):
+    def write_readmemb_file(self, filename: str) -> None:
         with open(filename, "w") as micro_f:
             for state in self.data.values():
                 for signal in state.items():
