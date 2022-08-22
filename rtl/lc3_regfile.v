@@ -55,6 +55,9 @@ module lc3_regfile
       endcase // case (sr1mux)
     end
 
+  // always @(registers[0])
+    // $display("REG0: %4x", registers[0]);
+
   assign sr2out = registers[ir[2:0]];
 
 endmodule

@@ -12,7 +12,7 @@ module lc3_marmux
   input         gate_marmux;
   output [15:0] data_bus;
 
-  wire          marmux_mux_out;
+  wire [15:0]   marmux_mux_out;
 
   assign marmux_mux_out = (marmux == 1'b1)
                            ? addr_out

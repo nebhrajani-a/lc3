@@ -26,7 +26,8 @@ module lc3_ram
 
   initial
     begin
-      $readmemb("prog.bin", ram, 'h3000);
+      $readmemh("lc3os.hex", ram, 'h0000);
+      ram['hfe04] = {1'b1, {15{1'b0}}};
     end
 
   always @(posedge clk)
@@ -46,5 +47,17 @@ module lc3_ram
         end
     end
 
+  always @(addr)
+    begin
+      if (addr == 'hfe06)
+        $write("%c", ram['hfe06]);
+    end
+  always @(ram['hfffe])
+    begin
+      if (ram['hfffe][15] == 1'b0)
+        begin
+          $finish;
+        end
+    end
 
 endmodule

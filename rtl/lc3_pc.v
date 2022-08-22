@@ -5,7 +5,8 @@ module lc3_pc
    ld_pc,
    addr_out,
    gate_pc,
-   data_bus
+   data_bus,
+   pc
    );
 
   input         clk;
@@ -15,6 +16,7 @@ module lc3_pc
   input  [15:0] addr_out;
   input         gate_pc;
   inout  [15:0] data_bus;
+  output [15:0] pc;
 
   reg    [15:0] pc;
 
@@ -22,7 +24,7 @@ module lc3_pc
     begin
       if (rst == 1'b0)
         begin
-          pc <= 16'h3000; // starting program position (without OS)
+          pc <= 16'h0200; // starting program position (OS)
         end
       else if (ld_pc)
         begin

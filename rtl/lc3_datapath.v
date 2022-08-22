@@ -115,6 +115,7 @@ module lc3_datapath
      .gate_pc(gate_pc),
      .ld_pc(ld_pc),
      .pcmux(pcmux),
+     .pc(pc),
      .rst(rst)
      );
 

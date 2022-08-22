@@ -46,7 +46,8 @@ module lc3_control
                 3'b011: state <= control_store[state][34:29] | {5'h0, ir[11]};
                 default: state <= control_store[state][34:29];
               endcase
-            end
+            end // else: !if(control_store[state][25] == 1'b1)
+          // $display("State: %d", state);
         end
     end // always @ (posedge clk or negedge rst)
 
