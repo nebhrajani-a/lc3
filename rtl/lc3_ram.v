@@ -9,7 +9,7 @@ module lc3_ram
    );
 
   parameter DATA_WIDTH = 16;
-  parameter DEPTH = 65024;
+  parameter DEPTH = 'hffff;
   localparam ADDR_WIDTH = $clog2(DEPTH);
 
   input                           clk;
