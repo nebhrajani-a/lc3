@@ -176,6 +176,7 @@ CONTROL_SIGNALS_ACTUAL = {
         "gate_mdr": 1,
         "ld_reg": 1,
         "drmux": 0,
+        "ld_cc": 1,
     },
 
     # LDR
@@ -211,6 +212,7 @@ CONTROL_SIGNALS_ACTUAL = {
         "gate_marmux": 1,
         "ld_reg": 1,
         "drmux": 0,
+        "ld_cc": 1
     },
 
     # TRAP
@@ -218,7 +220,7 @@ CONTROL_SIGNALS_ACTUAL = {
         "j": 28,
         "cond": 0b000,
         "marmux": 0,
-        "gate_marmux": 0,
+        "gate_marmux": 1,
         "ld_mar": 1
     },
     28: {

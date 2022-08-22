@@ -2,3 +2,5 @@ a.out
 *.vcd
 __pycache__
 microcode.bin
+scripts/ucode_chk
+.mypy_cache
