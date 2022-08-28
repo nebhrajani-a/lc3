@@ -1,10 +1,11 @@
 * lc3
 
 ** To do
-- Behavioral I/O models in lc3_ram
-- Better names and comments -- code review
-- SimEnv -- use lc3sim to C&R
-- Add headers to RTL
-- Cleanup dirs
-- Makefile
-- Documentation
+- [ ] Behavioral I/O models in lc3_ram
+- [ ] Better names and comments -- code review
+- [ ] SimEnv -- use lc3sim to C&R
+- [ ] Add headers to RTL
+- [ ] Cleanup dirs
+- [ ] Makefile
+- [ ] Documentation
+- [ ] CI/CD

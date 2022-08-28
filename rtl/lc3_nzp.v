@@ -36,11 +36,11 @@ module lc3_nzp
             begin
               n <= data_bus[15];
               z <= data_bus == {16{1'b0}};
-              p <= ~data_bus[15];
+              p <= ~data_bus[15] && data_bus != 0; // review
             end
           if (ld_ben)
             begin
-              ben <= (ir[11] & n) | (ir[10] & z) | (ir[9] & p);
+              ben <= (ir[11] && n) || (ir[10] && z) || (ir[9] && p);
             end
         end
     end

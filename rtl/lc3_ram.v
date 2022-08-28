@@ -26,7 +26,9 @@ module lc3_ram
 
   initial
     begin
-      $readmemh("lc3os.hex", ram, 'h0000);
+      $readmemh("../run/lc3os.hex", ram, 'h0000);
+      $readmemh("/Users/aditya/tmp/harry.hex", ram, 'h5000);
+      $readmemh("../run/user_code_test.hex", ram, 'h3000);
       ram['hfe04] = {1'b1, {15{1'b0}}};
     end
 
@@ -56,6 +58,8 @@ module lc3_ram
     begin
       if (ram['hfffe][15] == 1'b0)
         begin
+
+          $display("30ff: %0d", ram['h30ff]);
           $finish;
         end
     end

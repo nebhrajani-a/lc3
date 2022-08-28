@@ -31,8 +31,8 @@ module lc3_addr_sel
       case (addr2mux)
         2'b00:   addr2mux_out = {16{1'b0}};
         2'b01:   addr2mux_out = {{10{ir[5]}}, ir[5:0]};
-        2'b10:   addr2mux_out = {{7{ir[5]}}, ir[8:0]};
-        2'b11:   addr2mux_out = {{5{ir[5]}}, ir[10:0]};
+        2'b10:   addr2mux_out = {{7{ir[8]}}, ir[8:0]};
+        2'b11:   addr2mux_out = {{5{ir[10]}}, ir[10:0]};
         default: addr2mux_out = 4'h0;
       endcase
     end

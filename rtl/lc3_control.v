@@ -20,7 +20,7 @@ module lc3_control
   // Infer a ROM for control store
   initial
     begin
-      $readmemb("microcode.bin", control_store);
+      $readmemb("../run/microcode.bin", control_store);
     end
 
   always @(posedge clk or negedge rst)

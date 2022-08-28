@@ -1,5 +1,0 @@
-.ORIG x3000
-.FILL TEST
-TEST
-        ADD R0,R0,R1
-.END
