@@ -51,15 +51,15 @@ module lc3_ram
 
   always @(addr)
     begin
-      if (addr == 'hfe06)
+      if (addr === 'hfe06)
         $write("%c", ram['hfe06]);
     end
+
   always @(ram['hfffe])
     begin
-      if (ram['hfffe][15] == 1'b0)
+      if (ram['hfffe][15] === 1'b0)
         begin
-
-          $display("30ff: %0d", ram['h30ff]);
+          // $display("30ff: %0d", ram['h30ff]);
           $finish;
         end
     end

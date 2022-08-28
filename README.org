@@ -1,11 +1,20 @@
 * lc3
 
+To run a sample program,
+
+#+begin_src sh
+  cd run
+  ./run_lc3
+#+end_src
+
+
 ** To do
 - [ ] Behavioral I/O models in lc3_ram
-- [ ] Better names and comments -- code review
-- [ ] SimEnv -- use lc3sim to C&R
+- [ ] Better names (mem, ram) and comments -- code review
+- [ ] SimEnv -- use lc3sim to C&R -- filter out its garbage output?
+  - [ ] Memdump to file, write Python parser to make interaction easy.
 - [ ] Add headers to RTL
 - [ ] Cleanup dirs
-- [ ] Makefile
+- [ ] Makefile, run scripts
 - [ ] Documentation
 - [ ] CI/CD
