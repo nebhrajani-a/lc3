@@ -1,21 +1,16 @@
 #!/usr/bin/env zsh
-cp ../rtl/microcode.bin .
+python3 ../scripts/ucode/microcode_gen.py
 cd ../asm
-lc3as lc3os.asm > tmp
-echo "Dumb script running"
-../scripts/binmgmt/lc3obj2memh.py lc3os.obj
-cp lc3os.hex ../run
-lc3as user_code_test.asm > tmp
-echo "Dumb script running"
-../scripts/binmgmt/lc3obj2memh.py user_code_test.obj
-cp user_code_test.hex ../run
-rm *.sym
-rm tmp
-rm *.obj
-rm *.hex
+for file in `ls`
+do
+    lc3as $file > tmp
+    ../scripts/binmgmt/lc3obj2memh.py *.obj
+    cp *.hex ../run
+    ls | grep -Ev "asm" | xargs rm
+done
 cd ../run
 iverilog ../rtl/lc3_*
-echo "Starting sim"
+# echo "Starting sim"
 # ./a.out | sed -n '2,/*/p'
 ./a.out
 ls | grep -Ev "run\_lc3" | xargs rm

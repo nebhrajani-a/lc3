@@ -23,9 +23,9 @@ module lc3_mlt();
       rst <= 1'b0;
       #10;
       rst <= 1'b1;
-      while (1)
-        begin
-          #10;
+      // while (1)
+        // begin
+          // #10;
           // if (lc3_mlt.DUT.lc3_pc_u8.pc == 16'h3000)
         // begin
           // for (i = 0; i < 8; ++i)
@@ -54,7 +54,7 @@ module lc3_mlt();
             // end
           // $display("IR: %x", lc3_mlt.DUT.lc3_ir_u4.ir);
           // #10;
-        end // while (1)
+        // end // while (1)
     end
 
 endmodule

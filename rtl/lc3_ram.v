@@ -26,9 +26,9 @@ module lc3_ram
 
   initial
     begin
-      $readmemh("../run/lc3os.hex", ram, 'h0000);
-      $readmemh("/Users/aditya/tmp/harry.hex", ram, 'h5000);
-      $readmemh("../run/user_code_test.hex", ram, 'h3000);
+      $readmemh("../run/lc3os.hex", ram);
+      $readmemh("../run/harry.hex", ram);
+      $readmemh("../run/user_code_test.hex", ram);
       ram['hfe04] = {1'b1, {15{1'b0}}};
     end
 
