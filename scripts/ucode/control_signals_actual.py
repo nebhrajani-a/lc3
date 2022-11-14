@@ -60,7 +60,7 @@ CONTROL_SIGNALS_ACTUAL = {
         "drmux": 1,
     },
 
-    # JSR
+    # JSRR
     20: {
         "j": 18,
         "cond": 0b000,
@@ -71,7 +71,7 @@ CONTROL_SIGNALS_ACTUAL = {
         "ld_pc": 1,
     },
 
-    # JSRR
+    # JSR
     21: {
         "j": 18,
         "cond": 0b000,
