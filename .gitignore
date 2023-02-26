@@ -1,7 +1,6 @@
 a.out
 *.vcd
 __pycache__
-microcode.bin
 scripts/ucode/chk
 .mypy_cache
 # *.asm

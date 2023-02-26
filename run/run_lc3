@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
-python3 ../scripts/ucode/microcode_gen.py
+# python3 ../scripts/ucode/microcode_gen.py
+cp ../scripts/ucode/microcode.bin .
 cd ../asm
 for file in `ls`
 do
